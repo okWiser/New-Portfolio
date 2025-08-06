@@ -1,29 +1,189 @@
-<section class="about-me my-12 px-6">
-  <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
-  <p class="mb-4">
-    I'm <strong>Wisani</strong>, a proactive and ambitious frontend developer based in South Africa. I specialize in blending code with design to create visually striking, user-focused web experiences. Whether it's a sleek landing page or a dynamic project, I build with purpose, speed, and polish.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-text">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">My Philosophy</h3>
-  <p class="mb-4">
-    I believe great design is invisible—it guides users effortlessly. I value clarity, efficiency, and creative storytelling. I thrive on rapid iteration, mentorship, and pushing boundaries to deliver high-impact results.
-  </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Your Name</span>
+                        <br>
+                        <span class="typewriter">Full Stack Developer</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I create beautiful, responsive web applications with modern technologies.
+                        Passionate about clean code, user experience, and innovative solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <div class="hero-image">
+                            <div class="floating-elements">
+                                <div class="floating-element"></div>
+                                <div class="floating-element"></div>
+                                <div class="floating-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">Skills Snapshot</h3>
-  <ul class="list-disc list-inside mb-4">
-    <li>Frontend: HTML, CSS, JavaScript, Tailwind CSS, Next.js</li>
-    <li>Design: UX/UI principles, branding, dark mode, micro-interactions</li>
-    <li>Workflow: Git, responsive design, rapid prototyping</li>
-    <li>Soft Skills: Clear communicator, fast learner, strategic thinker</li>
-  </ul>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    A passionate developer with expertise in modern web technologies
+                </p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a full-stack developer with over 3 years of experience creating 
+                        digital solutions that make a difference. I specialize in React, Node.js, 
+                        and modern web technologies.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, 
+                        contributing to open-source projects, or sharing knowledge with the community.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">What Drives Me</h3>
-  <p class="mb-4">
-    I'm energized by the challenge of building a projects that turn heads globally. I want my work to speak for itself — clean code, bold visuals, and seamless UX. I’m not just chasing perfection; I’m chasing impact!
-  </p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Here are some of my recent works
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack React and Node.js application</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative project management tool</p>
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Weather Dashboard</h3>
+                            <p>Real-time weather tracking application</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">Let’s Connect</h3>
-  <p>
-    Whether you're a recruiter, collaborator, or fellow creative, I’d love to hear from you. Check out my <a href="projects.html" class="text-blue-600 underline">projects</a> or head to the <a href="contact.html" class="text-blue-600 underline">contact page</a> to reach out.
-  </p>
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">
+                        Ready to bring your ideas to life? Let's discuss your project
+                    </p>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
