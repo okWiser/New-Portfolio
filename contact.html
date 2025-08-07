@@ -1,32 +1,81 @@
-<section class="contact-info my-12 px-6">
-  <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-  <p class="mb-6">
-    Whether you're a recruiter, collaborator, or fellow creative, I'd love to connect. I'm open to exciting opportunities, feedback, and meaningful conversations.
-  </p>
+<section class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">
+        Whether you're a recruiter, collaborator, or fellow creative, I'd love to connect. I'm open to exciting opportunities, feedback, and meaningful conversations.
+      </p>
+    </div>
 
-  <div class="contact-details mb-8">
-    <ul class="list-none space-y-2">
-      <li><strong>Email:</strong> <a href="mailto:wiserowens@gmail.com" class="text-blue-600 underline">wiserowens@gmail.com</a></li>
-      <li><strong>Location:</strong> Midrand, Gauteng, South Africa</li>
-      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/wisani" class="text-blue-600 underline">linkedin.com/in/wisani</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/okWiser" class="text-blue-600 underline">github.com/okWiser</a></li>
-    </ul>
-  </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3 class="contact-subtitle">Contact Information</h3>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:wiserowens@gmail.com">wiserowens@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Midrand, Gauteng, South Africa</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="https://linkedin.com/in/wisani" target="_blank" rel="noopener noreferrer">linkedin.com/in/wisani</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⚡</div>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/okWiser" target="_blank" rel="noopener noreferrer">github.com/okWiser</a>
+            </div>
+          </div>
+        </div>
 
-  <div class="qr-code mb-8">
-    <h3 class="text-xl font-semibold mb-2">Scan to Connect</h3>
-    <p class="mb-2">Use your phone to scan the QR code and access my portfolio instantly.</p>
-    <img src="assets/images/qr-code.png" alt="QR Code to Portfolio" class="w-40 h-40">
-  </div>
+        <div class="resume-download">
+          <h3 class="contact-subtitle">Download Resume</h3>
+          <p>Get my complete professional profile in PDF format</p>
+          <a href="assets/files/Wisani_Owen_Resume.pdf" download class="download-btn">
+            <span class="download-icon">⬇️</span>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
 
-  <!-- Optional Contact Form -->
-  <div class="contact-form mt-12">
-    <h3 class="text-xl font-semibold mb-4">Send a Message</h3>
-    <form action="#" method="post" class="space-y-4">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded">
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded">
-      <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-2 border rounded"></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
-    </form>
+      <div class="contact-form-container">
+        <h3 class="contact-subtitle">Send a Message</h3>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <span class="send-icon">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
