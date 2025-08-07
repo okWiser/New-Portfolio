@@ -1,26 +1,190 @@
-<section class="personal-info my-12 px-6">
-  <h2 class="text-3xl font-bold mb-4">About Me</h2>
-  <p class="mb-4">
-    I'm <strong>Wisani Owen</strong>, a frontend developer with a passion for crafting elegant, high-performance web experiences. I blend technical precision with creative design to build interfaces that are both functional and beautiful.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisani Owen - Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-text">Wisani</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">Core Skills</h3>
-  <ul class="list-disc list-inside mb-4">
-    <li>Expert in HTML, CSS, JavaScript</li>
-    <li>Proficient with React, Tailwind CSS, Next.js, and responsive design</li>
-    <li>Strong eye for branding, UX, and modern web trends</li>
-    <li>Efficient project planner and collaborative communicator</li>
-  </ul>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Wisani</span>
+                        <br>
+                        <span class="typewriter">Frontend Developer</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I create beautiful, responsive web applications with modern technologies.
+                        Passionate about clean code, user experience, and innovative solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="assets/files/Wisani_Owen_Resume.pdf" class="btn btn-accent" download>
+                            <span>📄</span> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <div class="hero-image">
+                            <div class="floating-elements">
+                                <div class="floating-element"></div>
+                                <div class="floating-element"></div>
+                                <div class="floating-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">Interests & Goals</h3>
-  <ul class="list-disc list-inside mb-4">
-    <li>Building a world-class projects that make a real impact</li>
-    <li>Rapid prototyping and high-impact project delivery</li>
-    <li>Creative integrations like QR codes and visual storytelling</li>
-  </ul>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    A passionate developer with expertise in modern web technologies
+                </p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm Wisani, a frontend developer passionate about crafting visually striking, user-friendly web experiences. I specialize in React, Next.js, Tailwind CSS, and modern design principles that blend creativity with clean code. Whether it's building sleek portfolios, experimenting with QR-driven storytelling, or exploring the latest UX trends, I bring energy, precision, and a hunger to grow. Based in South Africa, I'm focused on delivering standout digital work that meets global standards.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, 
+                        contributing to open-source projects, or sharing knowledge with the community.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h3 class="text-2xl font-semibold mt-6 mb-2">Current Focus</h3>
-  <p>
-    I'm currently working on launching some standout projects and modern UX features. My goal is to complete the projects within the coming weeks and venture into Software Quality Assurance and Testing, then start connecting with global opportunities.
-  </p>
-</section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Here are some of my recent works
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack React and Node.js application</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative project management tool</p>
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Weather Dashboard</h3>
+                            <p>Real-time weather tracking application</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Ready to bring your ideas to life? Let's discuss your project
+                </p>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
