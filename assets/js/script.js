@@ -2,8 +2,8 @@
 console.log('Portfolio loaded successfully');
 
 // DOM Elements
-const themeToggle = document.getElementById('theme-toggle');
-const hamburger = document.getElementById('hamburger');
+const themeToggle = document.getElementById('theme-toggle-btn');
+const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -19,6 +19,17 @@ function initThemeToggle() {
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+            
+            // Update button appearance
+            const sunIcon = themeToggle.querySelector('.sun-icon');
+            const moonIcon = themeToggle.querySelector('.moon-icon');
+            if (newTheme === 'light') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
         });
     }
 }
