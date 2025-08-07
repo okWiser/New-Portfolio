@@ -12,8 +12,11 @@ function initThemeToggle() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    // Support both IDs for theme toggle
+    const themeToggleBtn = document.getElementById('theme-toggle-btn') || document.getElementById('theme-toggle');
+    
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
@@ -21,14 +24,16 @@ function initThemeToggle() {
             localStorage.setItem('theme', newTheme);
             
             // Update button appearance
-            const sunIcon = themeToggle.querySelector('.sun-icon');
-            const moonIcon = themeToggle.querySelector('.moon-icon');
-            if (newTheme === 'light') {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
-            } else {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
+            const sunIcon = themeToggleBtn.querySelector('.sun-icon');
+            const moonIcon = themeToggleBtn.querySelector('.moon-icon');
+            if (sunIcon && moonIcon) {
+                if (newTheme === 'light') {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                } else {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                }
             }
         });
     }
