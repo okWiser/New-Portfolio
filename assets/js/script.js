@@ -2,7 +2,6 @@
 console.log('Portfolio loaded successfully');
 
 // DOM Elements
-const themeToggle = document.getElementById('theme-toggle-btn');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -12,29 +11,15 @@ function initThemeToggle() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    // Support both IDs for theme toggle
-    const themeToggleBtn = document.getElementById('theme-toggle-btn') || document.getElementById('theme-toggle');
+    const themeToggleBtn = document.getElementById('theme-toggle');
     
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
-            // Update button appearance
-            const sunIcon = themeToggleBtn.querySelector('.sun-icon');
-            const moonIcon = themeToggleBtn.querySelector('.moon-icon');
-            if (sunIcon && moonIcon) {
-                if (newTheme === 'light') {
-                    sunIcon.style.display = 'block';
-                    moonIcon.style.display = 'none';
-                } else {
-                    sunIcon.style.display = 'none';
-                    moonIcon.style.display = 'block';
-                }
-            }
         });
     }
 }
@@ -61,15 +46,18 @@ function initMobileMenu() {
 function initSmoothScroll() {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = link.getAttribute('href');
+            // Only prevent default for anchor links, not file links
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
@@ -103,19 +91,21 @@ function initFormHandling() {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Get form elements
-            const nameInput = contactForm.querySelector('input[type="text"]');
-            const emailInput = contactForm.querySelector('input[type="email"]');
-            const messageInput = contactForm.querySelector('textarea');
+            // Get form elements by name or id
+            const nameInput = contactForm.querySelector('input[name="name"], #name');
+            const emailInput = contactForm.querySelector('input[name="email"], #email');
+            const messageInput = contactForm.querySelector('textarea[name="message"], #message');
+            const subjectInput = contactForm.querySelector('input[name="subject"], #subject');
             
             // Get values
-            const name = nameInput.value.trim();
-            const email = emailInput.value.trim();
-            const message = messageInput.value.trim();
+            const name = nameInput?.value.trim() || '';
+            const email = emailInput?.value.trim() || '';
+            const message = messageInput?.value.trim() || '';
+            const subject = subjectInput?.value.trim() || '';
             
             // Simple validation
             if (!name || !email || !message) {
-                alert('Please fill in all fields');
+                alert('Please fill in all required fields');
                 return;
             }
             
@@ -126,9 +116,19 @@ function initFormHandling() {
                 return;
             }
             
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.submit-btn, button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+            
             // Simulate form submission
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            setTimeout(() => {
+                alert(`Thank you ${name}! Your message has been received. I will get back to you soon.`);
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1000);
         });
     }
 }
@@ -179,18 +179,54 @@ function initParallaxEffect() {
     }
 }
 
+// Download Button Handler
+function initDownloadHandler() {
+    const downloadBtns = document.querySelectorAll('.download-btn');
+    
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const href = btn.getAttribute('href');
+            if (href && href.includes('.pdf')) {
+                console.log('Resume download initiated');
+                // Optional: Track download analytics here
+            }
+        });
+    });
+}
+
+// QR Video Loop Handler
+function initQRVideoLoop() {
+    const qrVideo = document.querySelector('.qr-code');
+    
+    if (qrVideo && qrVideo.tagName === 'VIDEO') {
+        qrVideo.addEventListener('ended', () => {
+            setTimeout(() => {
+                qrVideo.play();
+            }, 5000);
+        });
+    }
+}
+
 // Initialize all features
 document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
-    initMobileMenu();
-    initSmoothScroll();
-    initScrollAnimations();
-    initFormHandling();
-    initStatsCounter();
-    initParallaxEffect();
-    
-    // Add loading animation
-    document.body.classList.add('loaded');
+    try {
+        initThemeToggle();
+        initMobileMenu();
+        initSmoothScroll();
+        initScrollAnimations();
+        initFormHandling();
+        initStatsCounter();
+        initParallaxEffect();
+        initDownloadHandler();
+        initQRVideoLoop();
+        
+        // Add loading animation
+        document.body.classList.add('loaded');
+        
+        console.log('Portfolio initialized successfully');
+    } catch (error) {
+        console.error('Error initializing portfolio:', error);
+    }
 });
 
 // Additional utilities

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Wisani Owen</title>
+    <title>Contact - Wisani Owen Portfolio</title>
     <meta name="description" content="Get in touch with Wisani Owen - Full Stack Developer based in South Africa">
     
     <!-- CSS -->
@@ -22,17 +22,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo-text">Wisani Owen</a>
+            <a href="index.html" class="logo-text">Wisani Owen Wiser Chauke</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
             <div class="theme-toggle">
-                <button id="theme-toggle-btn" aria-label="Toggle theme">
-                    <i class="fas fa-sun sun-icon"></i>
-                    <i class="fas fa-moon moon-icon"></i>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
                 </button>
             </div>
             <div class="hamburger">
@@ -44,7 +44,7 @@
     </nav>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" style="padding-top: 120px;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get in Touch</h2>
@@ -104,26 +104,28 @@
                         </div>
                     </div>
 
-                    <div class="resume-download">
+                    <div class="resume-section">
                         <h3 class="contact-subtitle">Download Resume</h3>
                         <p>Get my complete professional profile in PDF format</p>
-                        <a href="assets/files/Wisani_Owen_Resume.pdf" 
-                           download="Wisani_Owen_Resume.pdf" 
-                           class="download-btn">
-                            <i class="fas fa-download"></i>
-                            <span>Download Resume</span>
-                        </a>
-                    </div>
-                    
-                    <div class="qr-section">
-                        <h3 class="contact-subtitle">Scan to Download Resume</h3>
-                        <div class="qr-container">
-                            <img src="assets/images/portfolio-qr.svg" 
-                                 alt="QR Code for Resume Download" 
-                                 class="qr-code"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'qr-error\'>QR Code Loading...</div>'">
+                        <div class="resume-options">
+                            <div class="qr-container">
+                                <video class="qr-code" autoplay muted playsinline>
+                                    <source src="assets/videos/qr-code-animation.mp4" type="video/mp4">
+                                    <img src="assets/images/portfolio-qr.svg" alt="QR Code for Resume Download" class="qr-fallback-img">
+                                </video>
+                                <p class="qr-text">Scan with your phone</p>
+                            </div>
+                            <div class="download-container">
+                                <a href="assets/files/Wisani_Owen_Resume.pdf" 
+                                   download="Wisani_Owen_Resume.pdf" 
+                                   class="download-btn"
+                                   onclick="console.log('Resume download clicked')">
+                                    <i class="fas fa-download download-icon"></i>
+                                    <span>Download Resume</span>
+                                </a>
+                                <p class="download-text">Or click to download</p>
+                            </div>
                         </div>
-                        <p>Scan with your phone to download my resume instantly</p>
                     </div>
                 </div>
 

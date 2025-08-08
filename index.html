@@ -8,6 +8,7 @@
     <title>Wisani Owen - Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,9 +22,9 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="theme-toggle">
-                <button id="theme-toggle-btn" aria-label="Toggle theme">
-                    <i class="fas fa-sun sun-icon"></i>
-                    <i class="fas fa-moon moon-icon"></i>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
                 </button>
             </div>
             <div class="hamburger" id="hamburger">
@@ -88,16 +89,16 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Code Quality Score</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Tech Stack Mastery</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Happy Clients</span>
+                            <span class="stat-number">24/7 <i class="fas fa-clock"></i></span>
+                            <span class="stat-label">Problem Solver</span>
                         </div>
                     </div>
                 </div>
@@ -117,40 +118,46 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>E-Commerce Platform</h3>
-                            <p>Full-stack React and Node.js application</p>
-                            <div class="project-tech">
+                        <div class="project-overlay" style="padding: 1.5rem; font-size: 0.85rem;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Enterprise Design System</h3>
+                            <p style="font-size: 0.8rem; margin-bottom: 0.75rem; line-height: 1.3;">Scalable component library with micro-frontend architecture</p>
+                            <div class="project-tech" style="margin-bottom: 0.75rem;">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Storybook</span>
+                                <span>Webpack</span>
+                            </div>
+                            <a href="https://github.com/okWiser/enterprise-design-system" target="_blank" class="btn btn-primary" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay" style="padding: 1.5rem; font-size: 0.85rem;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">AI-Powered SaaS Dashboard</h3>
+                            <p style="font-size: 0.8rem; margin-bottom: 0.75rem; line-height: 1.3;">Next.js application with real-time analytics & ML integration</p>
+                            <div class="project-tech" style="margin-bottom: 0.75rem;">
+                                <span>Next.js</span>
+                                <span>TailwindCSS</span>
+                                <span>Prisma</span>
+                                <span>OpenAI</span>
+                            </div>
+                            <a href="https://github.com/okWiser/ai-saas-dashboard" target="_blank" class="btn btn-primary" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay" style="padding: 1.5rem; font-size: 0.85rem;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Healthcare Management System</h3>
+                            <p style="font-size: 0.8rem; margin-bottom: 0.75rem; line-height: 1.3;">HIPAA-compliant patient portal with telemedicine features</p>
+                            <div class="project-tech" style="margin-bottom: 0.75rem;">
                                 <span>React</span>
                                 <span>Node.js</span>
-                                <span>MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>Task Management App</h3>
-                            <p>Collaborative project management tool</p>
-                            <div class="project-tech">
-                                <span>Vue.js</span>
-                                <span>Express</span>
                                 <span>PostgreSQL</span>
+                                <span>AWS</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>Weather Dashboard</h3>
-                            <p>Real-time weather tracking application</p>
-                            <div class="project-tech">
-                                <span>JavaScript</span>
-                                <span>API</span>
-                                <span>CSS3</span>
-                            </div>
+                            <a href="https://github.com/okWiser/healthcare-management" target="_blank" class="btn btn-primary" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -168,18 +175,32 @@
                 </p>
             </div>
             <div class="contact-content">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                <div class="contact-options">
+                    <div class="contact-left">
+                        <h3>Send Quick Message</h3>
+                        <p>Fill out the form below for a quick inquiry</p>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                    <div class="contact-right">
+                        <a href="contact.html" class="btn btn-primary contact-page-btn">
+                            <i class="fas fa-address-book"></i>
+                            View Full Contact Page
+                        </a>
+                        <p>For complete contact info & resume download</p>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
+
             </div>
         </div>
     </section>
